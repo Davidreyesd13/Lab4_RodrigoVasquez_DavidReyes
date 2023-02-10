@@ -1,13 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.lab4p2_rodrigovasquez_davidreyes;
 
 /**
  *
  * @author Rui
  */
-public class Peon {
+public class Peon extends Pieza{
+
+    public Peon(String name, int x, int y) {
+        super(name, x, y);
+    }
+
+    public Peon() {
+    }
+
+    @Override
+    public void movimiento() {
+        
+    }
+    
     
 }
