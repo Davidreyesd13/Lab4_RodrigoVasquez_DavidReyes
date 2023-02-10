@@ -17,7 +17,7 @@ public abstract class Pieza {
     public Pieza() {
     }
     
-    public abstract void movimiento(int x, int y, int finalX, int finalY, Object[][] tablero);
+    public abstract boolean movimiento(int x, int y, int finalX, int finalY, Object[][] tablero, int player);
 
     public String getName() {
         return name;
