@@ -5,8 +5,8 @@ package com.mycompany.lab4p2_rodrigovasquez_davidreyes;
  * @author Rui
  */
 public abstract class Pieza {
-    private String name;
-    private int x, y;
+    protected String name;
+    protected int x, y;
 
     public Pieza(String name, int x, int y) {
         this.name = name;
@@ -17,7 +17,7 @@ public abstract class Pieza {
     public Pieza() {
     }
     
-    public abstract void movimiento();
+    public abstract void movimiento(int x, int y, int finalX, int finalY, Object[][] tablero);
 
     public String getName() {
         return name;
