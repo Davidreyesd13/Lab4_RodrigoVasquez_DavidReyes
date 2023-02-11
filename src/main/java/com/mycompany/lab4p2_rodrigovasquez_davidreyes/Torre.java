@@ -23,7 +23,9 @@ public class Torre extends Pieza{
                 } else if (finalY > 7 || finalY < 0) {
                     return movimiento;
                 } else {
-                    
+                    if (player == 1) {
+                        
+                    }
                 }
             }
         }
