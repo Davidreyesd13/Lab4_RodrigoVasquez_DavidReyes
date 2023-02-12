@@ -28,7 +28,7 @@ public class Lab4P2_RodrigoVasquez_DavidReyes {
                 } else if (i == 0 && j == 3) {
                     tablero[i][j] = new Rey("k", i, j);
                 } else if (i == 0 && j == 4) {
-                    tablero[i][j] = new Dama("q", i, j);
+//                    tablero[i][j] = new Dama("q", i, j);
                 }
             }
         }
@@ -45,14 +45,14 @@ public class Lab4P2_RodrigoVasquez_DavidReyes {
                 } else if (i == 7 && j == 3) {
                     tablero[i][j] = new Rey("K", i, j);
                 } else if (i == 7 && j == 4) {
-                    tablero[i][j] = new Dama("Q", i, j);
+//                    tablero[i][j] = new Dama("Q", i, j);
                 }
             }
         }
 
-        int jug = 1, posf, posini;
+        int jug = 1, posfx = 0, posiniy, posinix, posfy;
         while (f) {
-            String[] pos, x, y;
+            String[] pos, xy;
             if (jug == 1) {
                 impresion(tablero);
                 System.out.println("Turno " + jd1);
@@ -61,31 +61,3939 @@ public class Lab4P2_RodrigoVasquez_DavidReyes {
                 l.nextLine();
                 String pos1 = l.nextLine();
                 pos = pos1.split("\\|");
-                jug = 2;
                 if (pos1.equals("gusbai")) {
                     System.exit(0);
                 }
-                for (int i = 0; i < pos.length; i++) {
-                    switch (pos[0]) {
-                        case "P":
-                            
-                            break;
-                        case "N":
-                            break;
-                        case "":
-                            break;
-                        default:
-                            throw new AssertionError();
-                    }
+                switch (pos[0].charAt(0)) {
+                    case 'P':
+                        xy = pos[1].split("\\-");
+                        switch (xy[0].charAt(0)) {
+                            case 'A':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'B':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'C':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'D':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'E':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'F':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'G':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'H':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                        }
+
+                    case 'N':
+                        xy = pos[1].split("\\-");
+                        switch (xy[0].charAt(0)) {
+                            case 'A':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posfy][posfx]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'B':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'C':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'D':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'E':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'F':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'G':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 2;
+                                break;
+                            case 'H':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                        }
+                    case 'B':
+                        xy = pos[1].split("\\-");
+                        switch (xy[0].charAt(0)) {
+                            case 'A':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'B':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'C':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'D':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'E':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'F':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'G':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'H':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+
+                        }
+                    case 'K':
+                        xy = pos[1].split("\\-");
+                        System.out.println(xy[0]);
+                        switch (xy[0].charAt(0)) {
+                            case 'A':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'B':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'C':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'D':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'E':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'F':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'G':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'H':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+
+                        }
+                    case 'Q':
+                        System.out.println("Si entre");
+                        xy = pos[1].split("\\-");
+                        System.out.println(xy[0]);
+                        switch (xy[0].charAt(0)) {
+                            case 'A':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'B':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'C':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'D':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'E':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'F':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'G':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'H':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+
+                        }
+                    case 'R':
+
+                        xy = pos[1].split("\\-");
+
+                        switch (xy[0].charAt(0)) {
+                            case 'A':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'B':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'C':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'D':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'E':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'F':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'G':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                            case 'H':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'A':
+                                        posfx = 0;
+                                        break;
+                                    case 'B':
+                                        posfx = 1;
+                                        break;
+                                    case 'C':
+                                        posfx = 2;
+                                        break;
+                                    case 'D':
+                                        posfx = 3;
+                                        break;
+                                    case 'E':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'G':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'H':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=2;
+                                break;
+                        }
+                    default:
+                        System.out.println("Coordenada no valida");
+                        break;
                 }
             } else {
+                impresion(tablero);
+                System.out.println("Turno " + jd2);
                 System.out.println("Ingrese la Posicion que desea mover");
                 l.nextLine();
-                String pos2 = l.nextLine();
-                jug = 1;
-                System.out.println("Turno " + jd2);
-                if (pos2.equals("gusbai")) {
+                 String pos1 = l.nextLine();
+                
+
+                if (pos1.equals("gusbai")) {
                     System.exit(0);
+                }
+                pos = pos1.split("\\|");
+                switch (pos[0].charAt(0)) {
+                    case 'p':
+                        xy = pos[1].split("\\-");
+                        switch (xy[0].charAt(0)) {
+                            case 'a':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug =1;
+                                break;
+                            case 'b':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 1;
+                                break;
+                            case 'c':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug =1;
+                                break;
+                            case 'd':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug =1;
+                                break;
+                            case 'e':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 1;
+                                break;
+                            case 'f':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 1;
+                                break;
+                            case 'g':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 1;
+                                break;
+                            case 'h':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Peon) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 1;
+                                break;
+                        }
+
+                    case 'n':
+                        xy = pos[1].split("\\-");
+                        switch (xy[0].charAt(0)) {
+                            case 'a':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posfy][posfx]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 1;
+                                break;
+                            case 'b':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug =1;
+                                break;
+                            case 'c':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 1;
+                                break;
+                            case 'd':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 1;
+                                break;
+                            case 'e':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 1;
+                                break;
+                            case 'f':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug =1;
+                                break;
+                            case 'g':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug = 1;
+                                break;
+                            case 'h':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Caballo) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                        }
+                    case 'b':
+                        xy = pos[1].split("\\-");
+                        switch (xy[0].charAt(0)) {
+                            case 'a':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'b':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'c':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'd':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'e':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'f':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'g':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'h':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Alfil) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+
+                        }
+                    case 'k':
+                        xy = pos[1].split("\\-");
+                        System.out.println(xy[0]);
+                        switch (xy[0].charAt(0)) {
+                            case 'a':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'b':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'c':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'd':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'e':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'f':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'g':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'h':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+
+                        }
+                    case 'q':
+                        System.out.println("Si entre");
+                        xy = pos[1].split("\\-");
+                        System.out.println(xy[0]);
+                        switch (xy[0].charAt(0)) {
+                            case 'a':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'b':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'c':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'F':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'd':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'e':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'f':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'g':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Dama) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'h':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                
+                                if (((Rey) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+
+                        }
+                    case 'r':
+
+                        xy = pos[1].split("\\-");
+
+                        switch (xy[0].charAt(0)) {
+                            case 'A':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 0;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'b':
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                posinix = 1;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'c':
+                                posinix = 2;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'd':
+                                posinix = 3;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'e':
+                                posinix = 4;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'f':
+                                posinix = 5;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'g':
+                                posinix = 6;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                            case 'h':
+                                posinix = 7;
+                                posiniy = xy[0].charAt(1) - 48;
+                                posfy = xy[1].charAt(1) - 48;
+                                switch (xy[1].charAt(0)) {
+                                    case 'a':
+                                        posfx = 0;
+                                        break;
+                                    case 'b':
+                                        posfx = 1;
+                                        break;
+                                    case 'c':
+                                        posfx = 2;
+                                        break;
+                                    case 'd':
+                                        posfx = 3;
+                                        break;
+                                    case 'e':
+                                        posfx = 4;
+                                        break;
+                                    case 'f':
+                                        posfx = 5;
+                                        break;
+                                    case 'g':
+
+                                        posfx = 6;
+                                        break;
+                                    case 'h':
+
+                                        posfx = 7;
+                                        break;
+                                }
+                                if (((Torre) tablero[posiniy][posinix]).movimiento(posinix, posiniy, posfx, posfy, tablero, jug)) {
+                                    ((Pieza) tablero[posfy][posfx]).setName("P");
+                                    ((Pieza) tablero[posiniy][posinix]).setName(" ");
+                                } else {
+                                    System.out.println("Movimiento no valido");
+                                }
+                                jug=1;
+                                break;
+                        }
+                    default:
+                        System.out.println("Coordenada no valida");
+                        break;
                 }
             }
         }
@@ -102,7 +4010,7 @@ public class Lab4P2_RodrigoVasquez_DavidReyes {
         for (int i = 0; i < Tablero.length; i++) {
             System.out.print(i + "");
             for (int j = 0; j < Tablero.length; j++) {
-                
+
                 if (Tablero[i][j] == null) {
                     System.out.print("[ " + "]");
                 } else {
